@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   AlertOctagon,
   AlertTriangle,
@@ -23,7 +22,6 @@ const ICONS_BY_VARIANT = {
 function Toast({ variant, id, children }) {
   const { dismissToast } = React.useContext(ToastContext);
   const Icon = ICONS_BY_VARIANT[variant];
-
   return (
     <div className={`${styles.toast} ${styles[variant]}`}>
       <div className={styles.iconContainer}>
@@ -34,7 +32,6 @@ function Toast({ variant, id, children }) {
         <VisuallyHidden>{variant}</VisuallyHidden>
         {children}
       </p>
-
       <button className={styles.closeButton} onClick={() => dismissToast(id)}>
         <X size={24} />
         <VisuallyHidden>Dismiss message</VisuallyHidden>
